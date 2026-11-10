@@ -572,6 +572,64 @@ footer .sub{color:var(--dim);letter-spacing:.2em;font-size:12px;text-transform:u
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease), transform .8s var(--ease);}
 .reveal.in{opacity:1;transform:translateY(0);}
 
+/* ---------- contact v2 (two column) ---------- */
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:start;}
+.contact-left h2{font-size:clamp(38px,6vw,84px);margin-top:18px;}
+.contact-left h2 .accent{color:var(--blue-2);}
+.contact-lead{margin-top:26px;color:var(--off);font-size:15px;line-height:1.65;max-width:460px;}
+.contact-cards{margin-top:36px;display:flex;flex-direction:column;gap:14px;max-width:460px;}
+.c-card{
+  display:flex;align-items:center;gap:16px;padding:16px 18px;
+  border:1px solid var(--line);border-radius:14px;background:var(--panel);
+  transition:border-color .3s, transform .4s var(--ease);
+}
+a.c-card:hover{border-color:var(--blue-2);transform:translateX(4px);}
+.c-icon{
+  width:44px;height:44px;border-radius:12px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(74,114,199,.16);color:var(--blue-2);
+}
+.c-icon svg{width:20px;height:20px;display:block;}
+.c-card .k{display:block;font-size:11px;letter-spacing:.16em;color:var(--dim);text-transform:uppercase;}
+.c-card .v{display:block;margin-top:4px;font-size:15px;font-weight:600;}
+.c-note{
+  margin-top:22px;max-width:460px;padding:16px 18px;border-radius:12px;
+  border:1px solid rgba(98,168,221,.35);background:rgba(74,114,199,.08);
+  color:var(--off);font-size:13px;line-height:1.6;
+}
+.contact-form{border:1px solid var(--line);border-radius:18px;padding:36px;background:var(--panel);}
+.cf-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px 28px;}
+.contact-form .field.err{border-bottom-color:#e5484d;}
+.contact-form textarea{height:90px;}
+.contact-form .submit-row{margin-top:36px;}
+@media (max-width:900px){
+  .contact-grid{grid-template-columns:1fr;gap:44px;}
+  .contact-form{padding:24px;}
+  .cf-grid{grid-template-columns:1fr;}
+}
+
+/* ---------- floating contact buttons ---------- */
+.float-contact{
+  position:fixed;right:22px;bottom:22px;z-index:400;
+  display:flex;flex-direction:column;gap:12px;
+}
+.fc-btn{
+  width:54px;height:54px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;box-shadow:0 6px 22px rgba(0,0,0,.45);
+  transition:transform .35s var(--ease), box-shadow .35s var(--ease);
+}
+.fc-btn svg{width:26px;height:26px;display:block;}
+.fc-btn:hover{transform:translateY(-4px) scale(1.06);box-shadow:0 10px 28px rgba(0,0,0,.55);}
+.fc-call{background:var(--blue);}
+.fc-wa{background:#25D366;}
+@media (max-width:760px){
+  .float-contact{right:14px;bottom:14px;}
+  .fc-btn{width:48px;height:48px;}
+  .fc-btn svg{width:23px;height:23px;}
+}
+
+
 @media (prefers-reduced-motion: reduce){
   *{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;}
 }

@@ -156,23 +156,6 @@ if(heroGhost){
   });
 }
 
-/* ---------------- build repeating visual bits ---------------- */
-
-
-const designViz = document.getElementById('designViz');
-const canvases = [
-  {w:'52%',h:'70%',top:'4%',left:'0%',rot:-4,c:'linear-gradient(135deg,var(--blue-1),var(--blue-2))'},
-  {w:'44%',h:'54%',top:'30%',left:'40%',rot:5,c:'linear-gradient(135deg,#1a1a1a,#2a2a2a)'},
-  {w:'34%',h:'40%',top:'54%',left:'12%',rot:-8,c:'linear-gradient(135deg,var(--blue-2),var(--blue-1))'}
-];
-canvases.forEach(cfg=>{
-  const el = document.createElement('div');
-  el.className='canvas';
-  Object.assign(el.style,{width:cfg.w,height:cfg.h,top:cfg.top,left:cfg.left,transform:`rotate(${cfg.rot}deg)`});
-  el.innerHTML = `<div class="swatch" style="background:${cfg.c}"></div>`;
-  designViz.appendChild(el);
-});
-
 /* ---------------- portfolio index tracking ---------------- */
 const cases = document.querySelectorAll('.case');
 const navButtons = document.querySelectorAll('.portfolio-nav button');
@@ -201,11 +184,6 @@ document.querySelectorAll('#budgetChips .chip').forEach(chip=>{
   });
 });
 
-/* ---------------- form submit feedback ---------------- */
-document.getElementById('submitBtn').addEventListener('click', ()=>{
-  const btn = document.getElementById('submitBtn');
-  btn.firstChild.textContent = 'Inquiry Sent ';
-});
 
 /* ---------------- magnetic buttons ---------------- */
 document.querySelectorAll('.magnetic').forEach(el=>{
@@ -226,3 +204,47 @@ if(videoTimeline){
     videoTimeline.appendChild(bar);
   }
 } 
+
+
+
+/* ---------------- contact form -> WhatsApp ---------------- */
+const WA_NUMBER = '923241767530'; // apna number: 92 se shuru, bina + aur bina 0
+const contactForm = document.getElementById('contactForm');
+if(contactForm){
+  const val = id => document.getElementById(id).value.trim();
+
+  contactForm.querySelectorAll('input, textarea').forEach(el=>{
+    el.addEventListener('input', ()=>el.closest('.field').classList.remove('err'));
+  });
+
+  contactForm.addEventListener('submit', e=>{
+    e.preventDefault();
+    const nameOk = !!val('cfName');
+    const detOk  = !!val('cfDetails');
+    document.getElementById('cfName').closest('.field').classList.toggle('err', !nameOk);
+    document.getElementById('cfDetails').closest('.field').classList.toggle('err', !detOk);
+    if(!nameOk || !detOk) return;
+
+    const services = [...document.querySelectorAll('#serviceChips .chip.on')]
+                      .map(c=>c.textContent.trim()).join(', ') || '-';
+    const budgetEl = document.querySelector('#budgetChips .chip.on');
+    const budget = budgetEl ? budgetEl.textContent.trim() : '-';
+
+    const msg = [
+      'Hi Viralyst! I want to discuss a project.',
+      '',
+      '*Name:* '          + val('cfName'),
+      '*Phone:* '         + (val('cfPhone')   || '-'),
+      '*Email:* '         + (val('cfEmail')   || '-'),
+      '*Company:* '       + (val('cfCompany') || '-'),
+      '*Looking for:* '   + services,
+      '*Budget:* '        + budget,
+      '*Website/Social:* '+ (val('cfWebsite') || '-'),
+      '',
+      '*Project details:*',
+      val('cfDetails')
+    ].join('\n');
+
+    window.open('https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg), '_blank');
+  });
+}

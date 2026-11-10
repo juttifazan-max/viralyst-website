@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Work — Viralyst</title>
+<link rel="icon" href="assets/vmark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="CoscadeStyle.css">
+<link rel="stylesheet" href="Portfolio.css">
+</head>
+<body>
+
+<header id="siteHeader">
+  <a href="index.html" class="logo-mark">
+    <img src="assets/vmark_icon.png" alt="Viralyst">
+    <span class="word">VIRALYST</span>
+  </a>
+  <div class="nav-links">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li class="cta-item"><a href="index.html#contact" class="cta-nav">Start a Project ↗</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <section class="pf-hero">
+    <span class="eyebrow">Portfolio</span>
+    <h1>Our <span class="accent">work.</span></h1>
+    <div class="pf-filters" id="pfFilters">
+      <button class="chip on" data-filter="all">All</button>
+      <button class="chip" data-filter="social">Social Media</button>
+      <button class="chip" data-filter="marketing">Marketing</button>
+      <button class="chip" data-filter="video">Video</button>
+      <button class="chip" data-filter="design">Design</button>
+    </div>
+  </section>
+
+  <section class="pf-grid" id="pfGrid">
+
+    <!-- ===== SOCIAL / DESIGN / MARKETING project (images ka slider) =====
+         data-images mein images comma se alag likho -->
+    <article class="pf-card" data-cat="social" tabindex="0"
+             data-images="Portfolio/social-1.jpg,Portfolio/social-2.jpg,Portfolio/social-3.jpg">
+      <div class="pf-media">
+        <img src="Portfolio/social-1.jpg" alt="Client Name">
+        <span class="pf-count">3 images</span>
+      </div>
+      <div class="pf-info">
+        <span class="cat">Social Media</span>
+        <h3>Client Name</h3>
+        <p>Ek line ka result, jaise: Instagram page 0 se 10K followers tak.</p>
+      </div>
+    </article>
+
+    <!-- ===== VIDEO project (YouTube ya Drive ka embed link) ===== -->
+    <article class="pf-card" data-cat="video" tabindex="0"
+             data-video="https://www.youtube.com/embed/VIDEO_ID">
+      <div class="pf-media">
+        <img src="Portfolio/video-1.jpg" alt="Client Name">
+        <span class="pf-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+      </div>
+      <div class="pf-info">
+        <span class="cat">Video Editing</span>
+        <h3>Client Name</h3>
+        <p>Ek line ka result, jaise: Reel ko 50K views mile.</p>
+      </div>
+    </article>
+
+    <article class="pf-card" data-cat="design" tabindex="0"
+             data-images="Portfolio/design-1.jpg,Portfolio/design-2.jpg">
+      <div class="pf-media">
+        <img src="Portfolio/design-1.jpg" alt="Client Name">
+        <span class="pf-count">2 images</span>
+      </div>
+      <div class="pf-info">
+        <span class="cat">Graphic Design</span>
+        <h3>Client Name</h3>
+        <p>Ek line, jaise: Complete brand identity aur social kit.</p>
+      </div>
+    </article>
+
+  </section>
+
+  <section class="cta-final" style="min-height:50vh;">
+    <h2 style="font-size:clamp(32px,6vw,80px);">Want results like <span style="color:var(--blue-2)">these?</span></h2>
+    <a href="index.html#contact" class="start-btn">Start a Project</a>
+  </section>
+</main>
+
+<!-- POPUP -->
+<div class="pf-modal" id="pfModal" aria-hidden="true">
+  <div class="pf-modal-box">
+    <button class="pf-close" id="pfClose" aria-label="Close">×</button>
+    <div class="pf-stage" id="pfStage"></div>
+    <div class="pf-modal-info">
+      <span class="cat" id="pfCat"></span>
+      <h3 id="pfTitle"></h3>
+      <p id="pfDesc"></p>
+    </div>
+  </div>
+</div>
+
+<script src="Portfolio.js"></script>
+</body>
+</html>
