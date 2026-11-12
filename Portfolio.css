@@ -1,21 +1,24 @@
 .pf-hero{padding:170px var(--pad) 20px;}
   .pf-hero h1{font-size:clamp(48px,9vw,140px);margin-top:18px;}
   .pf-hero h1 .accent{color:var(--blue-2);}
-  .pf-filters{display:flex;flex-wrap:wrap;gap:10px;margin-top:40px;}
+  .pf-hero .pf-sub{margin-top:22px;color:var(--off);font-size:15px;line-height:1.6;max-width:520px;}
+  .pf-filters{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px;}
   .pf-filters .chip{cursor:pointer;}
 
   .pf-grid{
     display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,440px),1fr));
-    gap:28px;padding:40px var(--pad) 120px;
+    gap:28px;padding:40px var(--pad) 40px;
   }
   .pf-card{
     border:1px solid var(--line);border-radius:16px;overflow:hidden;cursor:pointer;
     background:var(--panel);transition:transform .5s var(--ease), border-color .3s;
-    outline:none;
+    outline:none;animation:pfIn .6s var(--ease) both;
   }
   .pf-card:hover,.pf-card:focus-visible{transform:translateY(-6px);border-color:var(--blue-2);}
   .pf-card.hide{display:none;}
-  .pf-media{position:relative;aspect-ratio:16/10;background:linear-gradient(135deg,#0d0d0d,#1a1a1a);overflow:hidden;}
+  @keyframes pfIn{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+
+  .pf-media{position:relative;aspect-ratio:16/10;background:linear-gradient(135deg,#0d0d0d,#1a2236);overflow:hidden;}
   .pf-media img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s var(--ease);}
   .pf-card:hover .pf-media img{transform:scale(1.05);}
   .pf-play{
@@ -35,6 +38,11 @@
   .pf-info .cat{font-size:11px;letter-spacing:.18em;color:var(--blue-2);text-transform:uppercase;font-weight:600;}
   .pf-info h3{font-size:clamp(22px,2.2vw,30px);margin-top:12px;}
   .pf-info p{margin-top:10px;color:var(--dim);font-size:14px;line-height:1.5;}
+
+  .pf-empty{display:none;text-align:center;padding:60px var(--pad) 20px;color:var(--dim);}
+  .pf-empty.show{display:block;}
+  .pf-empty h3{font-size:clamp(24px,3.4vw,40px);color:var(--white);}
+  .pf-empty p{margin-top:14px;font-size:15px;}
 
   /* ---------- popup ---------- */
   .pf-modal{
@@ -70,7 +78,10 @@
   .pf-modal-info .cat{font-size:11px;letter-spacing:.18em;color:var(--blue-2);text-transform:uppercase;font-weight:600;}
   .pf-modal-info h3{font-size:clamp(24px,3vw,38px);margin-top:12px;}
   .pf-modal-info p{margin-top:12px;color:var(--off);font-size:15px;line-height:1.6;max-width:640px;}
+
   @media (max-width:760px){
+    .pf-hero{padding-top:130px;}
+    .pf-grid{gap:20px;}
     .pf-modal{padding:12px;}
     .pf-arrow{width:38px;height:38px;}
   }
