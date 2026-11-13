@@ -94,7 +94,7 @@ header{
   background:linear-gradient(180deg, rgba(0,0,0,.75), rgba(0,0,0,0));
   transition:transform .5s var(--ease);
 }
-@media (max-width:760px){
+@media (max-width:900px){
   header{
     background:rgba(0,0,0,.92);
     padding:16px 20px;
@@ -118,7 +118,35 @@ header.hidden{transform:translateY(-120%);}
   font-size:12px;letter-spacing:.08em;
 }
 .nav-links{display:flex;}
-@media (max-width:820px){ .nav-links ul li:not(.cta-item){display:none;} }
+/* ---------- mobile menu ---------- */
+.menu-btn{display:none;width:44px;height:44px;position:relative;z-index:520;}
+.menu-btn span{
+  position:absolute;left:11px;right:11px;height:2px;background:#fff;border-radius:2px;
+  transition:transform .4s var(--ease), top .4s var(--ease);
+}
+.menu-btn span:nth-child(1){top:18px;}
+.menu-btn span:nth-child(2){top:26px;}
+header.menu-open{transform:none !important;}
+header.menu-open .logo-mark{position:relative;z-index:520;}
+header.menu-open .menu-btn span:nth-child(1){top:22px;transform:rotate(45deg);}
+header.menu-open .menu-btn span:nth-child(2){top:22px;transform:rotate(-45deg);}
+
+@media (max-width:820px){
+  .menu-btn{display:block;}
+  .nav-links{
+    position:fixed;inset:0;z-index:510;background:rgba(0,0,0,.97);
+    display:flex;align-items:center;justify-content:center;
+    opacity:0;visibility:hidden;
+    transition:opacity .4s var(--ease), visibility .4s;
+  }
+  header.menu-open .nav-links{opacity:1;visibility:visible;}
+  .nav-links ul{flex-direction:column;gap:30px;text-align:center;}
+  .nav-links a:not(.cta-nav){
+    font-family:'Inter Tight',sans-serif;font-weight:800;
+    font-size:clamp(30px,9vw,46px);letter-spacing:-.01em;
+  }
+  .nav-links .cta-nav{font-size:14px;padding:14px 28px;}
+}
 
 /* ---------- section base ---------- */
 section{position:relative;}
@@ -225,7 +253,7 @@ section{position:relative;}
   position:absolute;bottom:34px;left:0;right:0;text-align:center;z-index:2;
   opacity:0;transform:translateY(12px);transition:all .5s var(--ease) .1s;
 }
-@media (max-width:760px){
+@media (max-width:1100px){
   .engine-word.active .label{transform:translateY(-40px);opacity:0;}
 }
 .engine-word.active .detail{opacity:1;transform:translateY(0);}
@@ -238,7 +266,7 @@ section{position:relative;}
   background-size:34px 34px;
   mask-image:radial-gradient(ellipse 70% 70% at 50% 50%, black 20%, transparent 75%);
 }
-@media (max-width:760px){
+@media (max-width:1100px){
   .hero{min-height:auto;padding-top:110px;padding-bottom:0;justify-content:flex-start;}
   .hero-head{margin-top:34px;}
   .engine{flex-direction:column;height:auto;gap:8px;border-top:none;margin-top:40px;}
@@ -264,7 +292,7 @@ section{position:relative;}
   /* active: badi, image + headline dikhein */
   .engine-word.active{
     flex:none;
-    height:340px;
+    height:clamp(340px,52vw,440px);
   }
   .engine-word.active .stage{opacity:1;}
   .engine-word.active .stage img{
@@ -602,9 +630,13 @@ a.c-card:hover{border-color:var(--blue-2);transform:translateX(4px);}
 .contact-form .field.err{border-bottom-color:#e5484d;}
 .contact-form textarea{height:90px;}
 .contact-form .submit-row{margin-top:36px;}
-@media (max-width:900px){
+@media (max-width:1000px){
   .contact-grid{grid-template-columns:1fr;gap:44px;}
+}
+@media (max-width:900px){
   .contact-form{padding:24px;}
+}
+@media (max-width:560px){
   .cf-grid{grid-template-columns:1fr;}
 }
 

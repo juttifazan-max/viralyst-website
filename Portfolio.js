@@ -70,3 +70,5 @@
     if(e.key==='ArrowRight' && slides.length>1) go(1);
     if(e.key==='ArrowLeft'  && slides.length>1) go(-1);
   });
+
+ 
