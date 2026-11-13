@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Viralyst — We Make Attention Move</title>
+<link rel="icon" href="assets/vmark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="CoscadeStyle.css">
+</head>
+<body>
+
+<div id="cursor">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M4 4 L11 20 L13 13 L20 6 L14 12 L11 20" stroke="white" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" fill="white"/></svg>
+</div>
+
+<div id="preloader">
+  <img src="assets/vmark.png" alt="Viralyst">
+  <div class="word"><span style="animation-delay:1.05s">V</span><span style="animation-delay:1.11s">I</span><span style="animation-delay:1.17s">R</span><span style="animation-delay:1.23s">A</span><span style="animation-delay:1.29s">L</span><span style="animation-delay:1.35s">Y</span><span style="animation-delay:1.41s">S</span><span style="animation-delay:1.47s">T</span></div>
+  <div class="tag">Media Agency</div>
+</div>
+
+<header id="siteHeader">
+  <a href="#top" class="logo-mark">
+    <img src="assets/vmark_icon.png" alt="Viralyst">
+    <span class="word">VIRALYST</span>
+  </a>
+  <div class="nav-links">
+    <ul>
+      <li><a href="portfolio.html">Work</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why">About</a></li>
+      <li class="cta-item"><a href="#contact" class="cta-nav magnetic">Start a Project ↗</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <canvas id="heroCanvas"></canvas>
+    <!-- <div class="hero-ghost" id="heroGhost"><img src="assets/vmark.png" alt=""></div> -->
+    <svg class="hero-grain" xmlns="http://www.w3.org/2000/svg">
+      <filter id="grainFilter"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>
+      <rect width="100%" height="100%" filter="url(#grainFilter)"/>
+    </svg>
+    <div class="hero-head">
+      <h1>
+        <span class="line"><span>We make brands</span></span>
+        <span class="line"><span>impossible to ignore.</span></span>
+      </h1>
+      <div class="hero-sub">
+        <p>Social. Video. Design. Strategy. Built for attention.</p>
+        <a href="portfolio.html" class="start-btn magnetic">Our Work
+          <svg viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5M19 5H8M19 5V16" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="engine" id="services">
+      <div class="engine-word active" data-service="social">
+        <div class="stage"><img src="assets/SM.jpeg" alt="Social Market">
+          <div class="glow"></div><div class="grid"></div></div>
+        <div class="label">Social Media Management</div>
+        <div class="detail">
+          <div class="headline"><b>Building brands people follow.</b></div>
+          <div class="tags"><b>Content Systems · Community · Publishing</b></div>
+        </div>
+      </div>
+      <div class="engine-word dim" data-service="marketing">
+        <div class="stage"><img src="assets/DM.jpeg"><div class="glow"></div><div class="grid"></div></div>
+        <div class="label">Digital Marketing</div>
+        <div class="detail">
+          <div class="headline">Attention with a purpose.</div>
+          <div class="tags">Creative · Audience · Distribution</div>
+        </div>
+      </div>
+      <div class="engine-word dim" data-service="video">
+        <div class="stage"><img src="assets/VideoEditing.jpeg"><div class="glow"></div><div class="grid"></div></div>
+        <div class="label">Video Editing</div>
+        <div class="detail">
+          <div class="headline">Stories that stop the scroll.</div>
+          <div class="tags">Editing · Short-Form · Motion</div>
+        </div>
+      </div>
+      <div class="engine-word dim" data-service="design">
+        <div class="stage"><img src="assets/GD.jpeg"><div class="glow"></div><div class="grid"></div></div>
+        <div class="label">Graphic Designing</div>
+        <div class="detail">
+          <div class="headline">Visuals people remember.</div>
+          <div class="tags">Identity · Campaign · Systems</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ATTENTION -->
+  <section class="attention">
+    <span class="eyebrow reveal">Positioning</span>
+    <div class="stretch-wrap"><span class="stretch reveal" id="stretchText">Attention is the <span class="accent">currency.</span></span></div>
+    <p class="lead reveal">Every scroll is a decision. Every second is earned. Every frame has a job.</p>
+    <h2 class="snap reveal">We create the reason <span class="accent">to stop.</span></h2>
+  </section>
+
+  <!-- SERVICE UNIVERSES -->
+<section class="universe" id="services-detail">
+  <div class="universe-inner">
+    <div class="reveal">
+      <span class="eyebrow">01 / Social Media Management</span>
+      <h2>WE BUILD ATTENTION <span class="accent">THAT </span> COMPOUNDS.</h2>
+      <div class="tags"><span>Content Strategy</span><span>Community Management</span><span>Publishing Systems</span><span>Brand Voice</span></div>
+    </div>
+
+    <div class="universe-visual reveal" id="socialCarousel">
+      <div class="carousel-track">
+        <img src="Social Pic/Content Managment.jpeg" class="carousel-img active" alt="Content Strategy">
+        <img src="Social Pic/CMM1.jpeg" class="carousel-img" alt="Community Management">
+        <img src="Social Pic/CCS.jpeg" class="carousel-img" alt="Publishing Systems">
+      </div>
+
+      <div class="carousel-dots">
+        <span class="dot active" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+        <span class="dot" data-index="3"></span>
+      
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section class="universe">
+    <div class="universe-inner">
+      <div class="reveal">
+        <span class="eyebrow">02 / Social Media Marketing</span>
+        <h2>WE TURN <span class="accent">ATTENTION</span> INTO ACTION.</h2>
+        <div class="tags"><span>Strategy</span><span>Distribution</span><span>Performance</span><span>Growth</span></div>
+      </div>
+
+       <div class="universe-visual reveal" id="marketingCarousel">
+      <div class="carousel-track">
+        <img src="Market/Strategy.jpg" class="carousel-img active" alt="Strategy">
+        <img src="Market/Distribution.jpg" class="carousel-img" alt="Distribution">
+        <img src="Market/Performance.jpg" class="carousel-img" alt="Performance">
+        <img src="Market/Growth.jpg" class="carousel-img" alt="Growth">
+      </div>
+
+      <div class="carousel-dots">
+        <span class="dot active" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+        <span class="dot" data-index="3"></span>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="universe">
+    <div class="universe-inner">
+      <div class="reveal">
+        <span class="eyebrow">03 / Video Editing</span>
+        <h2>WE MAKE STORIES <span class="accent">IMPOSSIBLE</span> TO IGNORE.</h2>
+        <div class="tags"><span>Short-Form</span><span>Ads</span><span>Reels</span><span>Motion</span><span>Editing</span><span>Story</span></div>
+      </div>
+           <div class="universe-visual reveal">
+      <div class="video-frame">
+        <img src="Videos/index.jpg" alt="Video Editing Workspace" class="single-img">
+        <div class="scanline"></div>
+        <div class="timeline" id="videoTimeline"></div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="universe">
+    <div class="universe-inner">
+      <div class="reveal">
+        <span class="eyebrow">04 / Graphic Design</span>
+        <h2>WE MAKE BRANDS <span class="accent">LOOK</span> UNFORGETTABLE.</h2>
+        <div class="tags"><span>Identity</span><span>Thumbnails</span><span>Visual Systems</span><span>Brand Kits</span><span>Campaigns</span></div>
+      </div>
+          <div class="universe-visual reveal" id="designCarousel">
+      <div class="carousel-track">
+        <img src="Design/Identity-Brand.jpg" class="carousel-img active" alt="Identity">
+        <img src="Design/Thumbnails-Campaigns.jpg" class="carousel-img" alt="Thumbnails">
+        <img src="Design/Visual-Systems.jpg" class="carousel-img" alt="Visual Systems">
+      </div>
+      <div class="carousel-dots">
+        <span class="dot active" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section class="why" id="why">
+    <div class="wrap">
+      <span class="eyebrow reveal">Why Viralyst</span>
+      <h2 class="reveal">No vanity. <span style="color:var(--blue-2)">Just the work.</span></h2>
+      <div class="principles">
+        <div class="principle reveal"><div class="num">01</div><h4>Think before we create.</h4><p>Strategy comes before execution. Every piece of content earns its place in the plan.</p></div>
+        <div class="principle reveal"><div class="num">02</div><h4>Make every frame count.</h4><p>No filler content. If a second doesn't add value, it doesn't make the cut.</p></div>
+        <div class="principle reveal"><div class="num">03</div><h4>Create for attention.</h4><p>Beautiful content nobody watches is still a failure. We build for the scroll.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROOF -->
+  <section class="proof">
+    <span class="eyebrow reveal">Social Proof</span>
+    <blockquote class="reveal">"They understood the vision before we could explain it."</blockquote>
+    <cite class="reveal"><b>Muhammad Haseeb</b> — Founder, Northline Goods</cite>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="cta-final" id="final-cta">
+    <div class="glow"></div>
+    <img src="assets/vmark.png" class="mark reveal" alt="">
+    <h2 class="reveal">Your next<br>big move<br>starts here.</h2>
+    <p class="reveal">Tell us what you're building. We'll tell you how we'd make it impossible to ignore.</p>
+    <a href="#contact" class="start-btn magnetic reveal">Start a Project
+      <svg viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5M19 5H8M19 5V16" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+</section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="contact-grid">
+
+        <div class="contact-left reveal">
+          <span class="eyebrow">Get in touch</span>
+          <h2>Let's build <span class="accent">something.</span></h2>
+          <p class="contact-lead">Tell us about your brand, your goals and your timeline. We'll reply with a clear plan for the next step.</p>
+
+          <div class="contact-cards">
+            <a class="c-card" href="mailto:viralystmediaagency@info.com">
+              <span class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+              <span><span class="k">Email us</span><span class="v">viralystmediaagency@info.com</span></span>
+            </a>
+            <a class="c-card" href="https://wa.me/923286561726  " target="_blank" rel="noopener">
+              <span class="c-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6l.4-.5c.1-.1.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15l-1.4 5 5.2-1.4A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg></span>
+              <span><span class="k">WhatsApp</span><span class="v">Chat on WhatsApp</span></span>
+            </a>
+            <div class="c-card">
+              <span class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+              <span><span class="k">Location</span><span class="v">Lahore · Working worldwide</span></span>
+            </div>
+          </div>
+
+          <div class="c-note">We usually reply within one business day with a clear plan for the next step.</div>
+        </div>
+
+        <form class="contact-form reveal" id="contactForm" novalidate>
+          <div class="cf-grid">
+            <div class="field"><label>Name *</label><input type="text" id="cfName" placeholder="Your name"></div>
+            <div class="field"><label>Phone</label><input type="text" id="cfPhone" placeholder="+92 300 0000000"></div>
+            <div class="field"><label>Email</label><input type="text" id="cfEmail" placeholder="you@company.com"></div>
+            <div class="field"><label>Company / Brand</label><input type="text" id="cfCompany" placeholder="Your company name"></div>
+
+            <div class="field full">
+              <label>I'm looking for</label>
+              <div class="chip-group" id="serviceChips">
+                <button type="button" class="chip" data-chip="social">Social Media Management</button>
+                <button type="button" class="chip" data-chip="marketing">Digital Marketing</button>
+                <button type="button" class="chip" data-chip="video">Video Editing</button>
+                <button type="button" class="chip" data-chip="design">Graphic Designing</button>
+                <button type="button" class="chip" data-chip="design">Web Development</button>
+                <button type="button" class="chip" data-chip="full">Full Media Support</button>
+              </div>
+            </div>
+
+            <div class="field full">
+              <label>Budget range</label>
+              <div class="chip-group" id="budgetChips">
+                <button type="button" class="chip" data-chip="1">PKR 30K – PKR 40K</button>
+                <button type="button" class="chip" data-chip="2">PKR 40K – PKR 60K</button>
+                <button type="button" class="chip" data-chip="3">PKR 60K – PKR 90K</button>
+                <button type="button" class="chip" data-chip="4">PKR 90K+</button>
+                <button type="button" class="chip" data-chip="5">Let's discuss</button>
+              </div>
+            </div>
+
+            <div class="field full"><label>Project details *</label><textarea id="cfDetails" placeholder="Tell us what you need, about your brand, your goal and your deadline?"></textarea></div>
+            <div class="field full"><label>Website / Social</label><input type="text" id="cfWebsite" placeholder="Instagram, Facebook, TikTok or website link"></div>
+          </div>
+
+          <div class="submit-row">
+            <button type="submit" class="start-btn magnetic" id="submitBtn">Send on WhatsApp
+              <svg viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5M19 5H8M19 5V16" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="word">Viralyst</div>
+        <div class="sub">Media Agency</div>
+      </div>
+      <div class="footer-links">
+        <a href="#" target="_blank" rel="noopener">Instagram</a>
+        <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="#" target="_blank" rel="noopener">Facebook</a>
+        <a href="mailto:hello@viralyst.agency">Email</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Viralyst Media Agency</span>
+      <span>Lahore · Worldwide</span>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING CONTACT BUTTONS -->
+<div class="float-contact">
+  <a href="tel:+923241767530" class="fc-btn fc-call" aria-label="Call us">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+  </a>
+  <a href="https://wa.me/923286561726?text=Hi%20Viralyst%2C%20I%20want%20to%20discuss%20a%20project" target="_blank" rel="noopener" class="fc-btn fc-wa" aria-label="WhatsApp us">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6l.4-.5c.1-.1.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15l-1.4 5 5.2-1.4A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+  </a>
+</div>
+
+<script>
+(function () {
+    const carousel = document.getElementById('socialCarousel');
+    const images = carousel.querySelectorAll('.carousel-img');
+    const dots = carousel.querySelectorAll('.dot');
+    let current = 0;
+    let autoSlide;
+
+    function showSlide(index) {
+        images.forEach(img => img.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        images[index].classList.add('active');
+        dots[index].classList.add('active');
+        current = index;
+    }
+
+    function nextSlide() {
+        let next = (current + 1) % images.length;
+        showSlide(next);
+    }
+
+    function startAutoSlide() {
+        autoSlide = setInterval(nextSlide, 3500); // har 3.5 second
+    }
+
+    function resetAutoSlide() {
+        clearInterval(autoSlide);
+        startAutoSlide();
+    }
+
+    dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            const index = parseInt(dot.getAttribute('data-index'));
+            showSlide(index);
+            resetAutoSlide();
+        });
+    });
+
+    startAutoSlide();
+})();
+</script>
+<script>
+(function () {
+    const carousel = document.getElementById('marketingCarousel');
+    const images = carousel.querySelectorAll('.carousel-img');
+    const dots = carousel.querySelectorAll('.dot');
+    let current = 0;
+    let autoSlide;
+
+    function showSlide(index) {
+        images.forEach(img => img.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        images[index].classList.add('active');
+        dots[index].classList.add('active');
+        current = index;
+    }
+
+    function nextSlide() {
+        let next = (current + 1) % images.length;
+        showSlide(next);
+    }
+
+    function startAutoSlide() {
+        autoSlide = setInterval(nextSlide, 3500);
+    }
+
+    function resetAutoSlide() {
+        clearInterval(autoSlide);
+        startAutoSlide();
+    }
+
+    dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            const index = parseInt(dot.getAttribute('data-index'));
+            showSlide(index);
+            resetAutoSlide();
+        });
+    });
+
+    startAutoSlide();
+})();
+</script>
+<script>
+(function () {
+    const carousel = document.getElementById('designCarousel');
+    const images = carousel.querySelectorAll('.carousel-img');
+    const dots = carousel.querySelectorAll('.dot');
+    let current = 0;
+    let autoSlide;
+
+    function showSlide(index) {
+        images.forEach(img => img.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        images[index].classList.add('active');
+        dots[index].classList.add('active');
+        current = index;
+    }
+
+    function nextSlide() {
+        let next = (current + 1) % images.length;
+        showSlide(next);
+    }
+
+    function startAutoSlide() {
+        autoSlide = setInterval(nextSlide, 3500);
+    }
+
+    function resetAutoSlide() {
+        clearInterval(autoSlide);
+        startAutoSlide();
+    }
+
+    dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            const index = parseInt(dot.getAttribute('data-index'));
+            showSlide(index);
+            resetAutoSlide();
+        });
+    });
+
+    startAutoSlide();
+})();
+</script>
+
+<script src="JavaScriptfile.js"></script>
+</body>
+</html>
