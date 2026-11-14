@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Team — Viralyst</title>
+<meta name="description" content="Meet the strategists, editors and designers behind Viralyst.">
+<link rel="icon" href="assets/vmark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="CoscadeStyle.css">
+<style>
+  .tm-hero{padding:170px var(--pad) 10px;}
+  .tm-hero h1{font-size:clamp(48px,9vw,140px);margin-top:18px;}
+  .tm-hero h1 .accent{color:var(--blue-2);}
+  .tm-hero .tm-sub{margin-top:22px;color:var(--off);font-size:15px;line-height:1.6;max-width:520px;}
+
+   /* ---------- slider ---------- */
+  .tm-slider{--per:4;padding:40px 0 110px;animation:tmFade .8s var(--ease) both;}
+  @keyframes tmFade{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+
+  .tm-stage{position:relative;}
+
+  /* kinaron par kaala halka shade */
+  .tm-stage::before,.tm-stage::after{
+    content:'';position:absolute;top:0;bottom:0;z-index:3;pointer-events:none;
+    width:calc(var(--pad) + 40px);
+  }
+  .tm-stage::before{left:0;background:linear-gradient(90deg,#000 25%,rgba(0,0,0,0));}
+  .tm-stage::after{right:0;background:linear-gradient(270deg,#000 25%,rgba(0,0,0,0));}
+
+  /* arrows: dono kinaron par, beech mein */
+  .tm-nav{
+    position:absolute;top:38%;transform:translateY(-50%);z-index:5;
+    width:52px;height:52px;border-radius:50%;
+    background:rgba(0,0,0,.65);backdrop-filter:blur(6px);
+    border:1px solid rgba(255,255,255,.35);font-size:20px;
+    display:flex;align-items:center;justify-content:center;
+    transition:background .3s, border-color .3s, transform .3s var(--ease);
+  }
+  .tm-prev{left:10px;}
+  .tm-next{right:10px;}
+  .tm-nav:hover{background:var(--blue-solid);border-color:var(--blue-solid);transform:translateY(-50%) scale(1.08);}
+  .tm-nav:active{transform:translateY(-50%) scale(.95);}
+
+  /* viewport poori chaurai tak, cards page ki padding se shuru hon */
+  .tm-viewport{overflow:hidden;padding:12px var(--pad);margin:-12px 0;}
+  .tm-track{display:flex;gap:24px;will-change:transform;}
+
+  /* cards 4 ya kam hon to arrows aur shade ki zaroorat nahi */
+  .tm-slider.static .tm-nav{display:none;}
+  .tm-slider.static .tm-stage::before,.tm-slider.static .tm-stage::after{display:none;}
+  .tm-slider.static .tm-track{justify-content:center;}
+
+  @media (max-width:760px){
+    .tm-nav{width:42px;height:42px;font-size:17px;}
+    .tm-prev{left:6px;} .tm-next{right:6px;}
+  }
+
+  .tm-card{
+    flex:0 0 calc((100% - (var(--per) - 1) * 24px) / var(--per));
+    display:flex;flex-direction:column;
+    border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--panel);
+    transition:transform .5s var(--ease), border-color .3s;
+  }
+  .tm-card:hover{transform:translateY(-6px);border-color:var(--blue-2);}
+
+  .tm-photo{position:relative;aspect-ratio:4/5;background:linear-gradient(135deg,#0d1424,#1a2a4a);overflow:hidden;}
+  .tm-initials{
+    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    font-family:'Inter Tight',sans-serif;font-weight:800;font-size:64px;color:rgba(98,168,221,.5);
+  }
+  .tm-photo img{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;
+    filter:grayscale(1);transition:filter .5s var(--ease), transform .6s var(--ease);
+  }
+  .tm-card:hover .tm-photo img{filter:grayscale(0);transform:scale(1.04);}
+  @media (hover:none){ .tm-photo img{filter:none;} }
+
+  .tm-info{padding:22px 22px 26px;flex:1;}
+  .tm-info h3{font-size:clamp(22px,2vw,28px);}
+  .tm-role{display:block;margin-top:10px;font-size:11px;letter-spacing:.18em;color:var(--blue-2);text-transform:uppercase;font-weight:600;}
+  .tm-info p{margin-top:14px;color:var(--dim);font-size:14px;line-height:1.6;}
+  .tm-tags{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;}
+  .tm-tags span{border:1px solid var(--line);padding:5px 12px;border-radius:100px;font-size:11px;letter-spacing:.06em;color:var(--off);}
+  .tm-link{display:inline-block;margin-top:18px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-2);font-weight:600;}
+  .tm-link:hover{text-decoration:underline;}
+
+  @media (max-width:760px){ .tm-hero{padding-top:130px;} .tm-slider{padding-bottom:80px;} }
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <a href="index.html" class="logo-mark">
+    <img src="assets/vmark_icon.png" alt="Viralyst">
+    <span class="word">VIRALYST</span>
+  </a>
+  <div class="nav-links">
+    <ul>
+      <li><a href="portfolio.html">Work</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li class="cta-item"><a href="index.html#contact" class="cta-nav">Start a Project ↗</a></li>
+    </ul>
+  </div>
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span>
+  </button>
+</header>
+
+<main>
+  <section class="tm-hero">
+    <span class="eyebrow">The team</span>
+    <h1>Meet the <span class="accent">team.</span></h1>
+    <p class="tm-sub">A small team of strategists, editors and designers who treat every brand like their own.</p>
+  </section>
+
+  <section class="tm-slider" id="tmSlider">
+    <div class="tm-stage">
+      <button class="tm-nav tm-prev" id="tmPrev" aria-label="Previous">←</button>
+      <button class="tm-nav tm-next" id="tmNext" aria-label="Next">→</button>
+
+      <div class="tm-viewport" id="tmViewport">
+        <div class="tm-track" id="tmTrack">
+
+        <!-- ===== EK MEMBER (naya member = is poore article ko copy karke paste karo, max 10) ===== -->
+        <article class="tm-card">
+          <div class="tm-photo">
+            <span class="tm-initials">AB</span>
+            <img src="Team/member-1.jpg" alt="Full Name" loading="lazy" onerror="this.style.display='none'">
+          </div>
+          <div class="tm-info">
+            <h3>Full Name</h3>
+            <span class="tm-role">Founder · Strategy</span>
+            <p>Do ya teen line ka intro. Kya karta hai aur kitne saal ka tajurba hai.</p>
+            <div class="tm-tags"><span>Strategy</span><span>Social Media</span><span>Clients</span></div>
+          </div>
+        </article>
+
+        <article class="tm-card">
+          <div class="tm-photo">
+            <span class="tm-initials">CD</span>
+            <img src="Team/member-2.jpg" alt="Full Name" loading="lazy" onerror="this.style.display='none'">
+          </div>
+          <div class="tm-info">
+            <h3>Full Name</h3>
+            <span class="tm-role">Video Editor</span>
+            <p>Do ya teen line ka intro. Kya karta hai aur kitne saal ka tajurba hai.</p>
+            <div class="tm-tags"><span>Reels</span><span>Motion</span><span>Color grading</span></div>
+          </div>
+        </article>
+
+        <article class="tm-card">
+          <div class="tm-photo">
+            <span class="tm-initials">EF</span>
+            <img src="Team/member-3.jpg" alt="Full Name" loading="lazy" onerror="this.style.display='none'">
+          </div>
+          <div class="tm-info">
+            <h3>Full Name</h3>
+            <span class="tm-role">Graphic Designer</span>
+            <p>Do ya teen line ka intro. Kya karta hai aur kitne saal ka tajurba hai.</p>
+            <div class="tm-tags"><span>Branding</span><span>Thumbnails</span><span>Campaigns</span></div>
+          </div>
+        </article>
+
+        <article class="tm-card">
+          <div class="tm-photo">
+            <span class="tm-initials">GH</span>
+            <img src="Team/member-4.jpg" alt="Full Name" loading="lazy" onerror="this.style.display='none'">
+          </div>
+          <div class="tm-info">
+            <h3>Full Name</h3>
+            <span class="tm-role">Social Media Manager</span>
+            <p>Do ya teen line ka intro. Kya karta hai aur kitne saal ka tajurba hai.</p>
+            <div class="tm-tags"><span>Content</span><span>Community</span><span>Publishing</span></div>
+          </div>
+        </article>
+
+        <article class="tm-card">
+          <div class="tm-photo">
+            <span class="tm-initials">IJ</span>
+            <img src="Team/member-5.jpg" alt="Full Name" loading="lazy" onerror="this.style.display='none'">
+          </div>
+          <div class="tm-info">
+            <h3>Full Name</h3>
+            <span class="tm-role">Digital Marketer</span>
+            <p>Do ya teen line ka intro. Kya karta hai aur kitne saal ka tajurba hai.</p>
+            <div class="tm-tags"><span>Ads</span><span>Growth</span><span>Analytics</span></div>
+          </div>
+        </article>
+
+                <article class="tm-card">
+          <div class="tm-photo">
+            <span class="tm-initials">KL</span>
+            <img src="Team/member-1.jpg" alt="Full Name" loading="lazy" onerror="this.style.display='none'">
+          </div>
+          <div class="tm-info">
+            <h3>Full Name</h3>
+            <span class="tm-role">Founder · Strategy</span>
+            <p>Do ya teen line ka intro. Kya karta hai aur kitne saal ka tajurba hai.</p>
+            <div class="tm-tags"><span>Strategy</span><span>Social Media</span><span>Clients</span></div>
+          </div>
+        </article>
+
+                <article class="tm-card">
+          <div class="tm-photo">
+            <span class="tm-initials">MN</span>
+            <img src="Team/member-1.jpg" alt="Full Name" loading="lazy" onerror="this.style.display='none'">
+          </div>
+          <div class="tm-info">
+            <h3>Full Name</h3>
+            <span class="tm-role">Founder · Strategy</span>
+            <p>Do ya teen line ka intro. Kya karta hai aur kitne saal ka tajurba hai.</p>
+            <div class="tm-tags"><span>Strategy</span><span>Social Media</span><span>Clients</span></div>
+          </div>
+        </article>
+
+                <article class="tm-card">
+          <div class="tm-photo">
+            <span class="tm-initials">OP</span>
+            <img src="Team/member-1.jpg" alt="Full Name" loading="lazy" onerror="this.style.display='none'">
+          </div>
+          <div class="tm-info">
+            <h3>Full Name</h3>
+            <span class="tm-role">Founder · Strategy</span>
+            <p>Do ya teen line ka intro. Kya karta hai aur kitne saal ka tajurba hai.</p>
+            <div class="tm-tags"><span>Strategy</span><span>Social Media</span><span>Clients</span></div>
+          </div>
+        </article>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-final" style="min-height:50vh;">
+    <h2 style="font-size:clamp(32px,6vw,80px);">Want to work <span style="color:var(--blue-2)">with us?</span></h2>
+    <a href="index.html#contact" class="start-btn">Start a Project</a>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="word">Viralyst</div>
+        <div class="sub">Media Agency</div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Work</a>
+        <a href="#" target="_blank" rel="noopener">Instagram</a>
+        <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:hello@viralyst.agency">Email</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Viralyst Media Agency</span>
+      <span>Lahore · Worldwide</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* header: neeche scroll par chhup jaye */
+  const siteHeader = document.getElementById('siteHeader');
+  let lastY = window.scrollY;
+  window.addEventListener('scroll', ()=>{
+    const y = window.scrollY;
+    siteHeader.classList.toggle('hidden', y > lastY && y > 200);
+    lastY = y;
+  }, {passive:true});
+
+  /* mobile menu */
+  (function(){
+    const btn = document.getElementById('menuBtn');
+    const setMenu = open => {
+      siteHeader.classList.toggle('menu-open', open);
+      btn.setAttribute('aria-expanded', open);
+      btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      document.body.style.overflow = open ? 'hidden' : 'auto';
+    };
+    btn.addEventListener('click', ()=>setMenu(!siteHeader.classList.contains('menu-open')));
+    siteHeader.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click', ()=>setMenu(false)));
+    window.addEventListener('resize', ()=>{ if(window.innerWidth > 900) setMenu(false); });
+    document.addEventListener('keydown', e=>{ if(e.key==='Escape') setMenu(false); });
+  })();
+
+  /* ---------- team slider: hamesha aage, kabhi peeche nahi ghoomta ---------- */
+  (function(){
+    const slider   = document.getElementById('tmSlider');
+    const viewport = document.getElementById('tmViewport');
+    const track    = document.getElementById('tmTrack');
+    const DUR = 600;                       // slide ki speed (milliseconds)
+    const EASE = 'cubic-bezier(.16,.84,.44,1)';
+    let busy = false;
+
+    // screen ke hisaab se kitne cards ek line mein dikhein
+    function perView(){
+      const w = window.innerWidth;
+      if(w <= 520)  return 1;
+      if(w <= 800)  return 2;
+      if(w <= 1100) return 3;
+      return 4;
+    }
+    function refresh(){
+      const pv = perView();
+      slider.style.setProperty('--per', pv);
+      // agar cards kam hain (ya barabar), to slider ki zaroorat nahi
+      slider.classList.toggle('static', track.children.length <= pv);
+    }
+    function step(){
+      const gap = parseFloat(getComputedStyle(track).columnGap) || 24;
+      return track.firstElementChild.getBoundingClientRect().width + gap;
+    }
+
+    function next(){
+      if(busy) return; busy = true;
+      track.style.transition = 'transform '+DUR+'ms '+EASE;
+      track.style.transform  = 'translateX('+(-step())+'px)';
+      setTimeout(()=>{
+        track.style.transition = 'none';
+        track.appendChild(track.firstElementChild);   // pehla card end mein laga do
+        track.style.transform  = 'translateX(0)';
+        void track.offsetWidth;
+        busy = false;
+      }, DUR + 20);
+    }
+    function prev(){
+      if(busy) return; busy = true;
+      const s = step();
+      track.style.transition = 'none';
+      track.insertBefore(track.lastElementChild, track.firstElementChild);
+      track.style.transform  = 'translateX('+(-s)+'px)';
+      void track.offsetWidth;
+      track.style.transition = 'transform '+DUR+'ms '+EASE;
+      track.style.transform  = 'translateX(0)';
+      setTimeout(()=>{ busy = false; }, DUR + 20);
+    }
+
+    document.getElementById('tmNext').addEventListener('click', next);
+    document.getElementById('tmPrev').addEventListener('click', prev);
+
+    // phone par ungli se swipe
+    let sx = null;
+    viewport.addEventListener('touchstart', e=>{ sx = e.touches[0].clientX; }, {passive:true});
+    viewport.addEventListener('touchend', e=>{
+      if(sx === null) return;
+      const dx = e.changedTouches[0].clientX - sx; sx = null;
+      if(Math.abs(dx) > 45){ dx < 0 ? next() : prev(); }
+    });
+
+    window.addEventListener('resize', refresh);
+    refresh();
+  })();
+</script>
+</body>
+</html>
